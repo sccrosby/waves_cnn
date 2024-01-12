@@ -1,0 +1,39 @@
+#
+.env
+
+# data
+datasets/
+data_analysis/
+data_outputs/
+wandb/
+models/
+data/forecast
+
+*.npz
+*.tar.gz
+*.mat
+
+# cache
+__pycache__/
+*.pyc
+
+# tmp files
+*.swo
+*.swp
+*.swp
+*.swm
+*.swo
+*.swp
+*.swo
+*.swp
+
+# logs
+
+*.log
+
+# mac thing
+.DS_Store
+.idea
+
+# python stuff
+.ipynb_checkpoints/
