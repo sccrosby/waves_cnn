@@ -1,0 +1,26 @@
+Data Processing
+===============
+(low) Extend to torch Dataset class instead of my own class
+(low) rewrite data_processing protocols to be more efficient and properly handle tensors up front
+        Ideally, this would properly vectorize time and tensors as well
+
+
+Data Visualization
+==================
+replicate matlab and visualization schematics in python
+
+
+CNN Model
+=========
+more versatile
+hyperparameters
+command line args
+GPU handling
+ISSUE: minibatch fetching is taking up ~45% of the time in training
+database logging (Elliott's thing)
+Flexible window
+
+
+Model Input/Training
+====================
+Multiple Datasets

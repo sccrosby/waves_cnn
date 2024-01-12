@@ -1,0 +1,124 @@
+46211_20190515201045
+
+==============================
+ml_waves Meeting Notes 3/22/19
+==============================
+
+- Recommended venue: AMS Weather and Forecasting
+- Aspects to include in paper:
+    - NEED: Highly tuned models
+    - NEED: Favorable comparison to 2-3 months of forecast (trained only on forecast)
+    - NEED: Train on at least one additional buoy
+    - NEED: Favorable comparison to 2-3 months of forecast (using fixed model)
+    - NEED: Performance comparison to hindcast
+    - SHOULD: Compare forecast length: 12, 24, 48
+    - SHOULD: Performance comparison to 2-3 months of forecast (after adaptation)
+    - COULD: Compare models trained on one buoy applied to other buoy
+    - COULD: Residual vs non-residual?
+    - COULD: Compare with and without time encodings in the input?
+Todo:
+    - SC Dig up forecast data
+    - JM Carve forecast into sets: either {adapt,test} or {adapt,dev,test} or just {test}
+Notes:
+- Forecasts are usually ~7 days, made every 6 hours
+    - Could we leverage these somehow down the road
+
+---------
+From Sean
+---------
+Forecasts from recent archiving (Wheter NOAA archives is TBD)
+-Note: forecasts are 7-days long, and are made every 6-hours
+-availability: Mid-Sept 2018 thru Current, with gaps During Dec-Feb.
+-Number of forecasts with 24-hours of forecasts prior: 556, since March 1. (About 4.6-months)
+
+==============================
+Misc Notes from Sean
+==============================
+3/15 More buoys
+    * email from Sean linking to more buoys -- downloaded data to /home/hutch_research/data/waves/buoys_20190315
+
+3/19 Papers from Sean
+Saved to : /home/mooneyj3/ml_waves
+    Deshmukh et al. 2016 Neural-network-based data assimilation to improve numerical ocean
+    NN_references.bib
+    Mkarynskyy - 2004 - Improving wave predictions with artificial neural networks
+
+==============================
+ml_waves Meeting Notes 3/13/19
+==============================
+
+Model:
+ - batch normalization
+ - dev_offset = 1 always, and then compute error/accuracy at each hour
+ - relu only on e vectors
+ - at the end of each experiment, compute test loss and store it in a vault
+
+Sean may have some more stuff
+
+
+==============================
+ml_waves Meeting Notes 2/27/19
+==============================
+Next step:
+  - Switch to non-square filters (1x4 or 5x4) for each conv layer (use SAME convolution)
+  - Check # datapoints in dev and test. Two ways to do dev/test:
+    1) Use offset=1, keep track of each forecast hours loss and store in separate bins:
+      a) 1 hour prediction (first spot)
+      b) 2 hour prediction (second spot)
+      c) etc
+    2) Use non-overlapping prediction windows; i.e. offset = F
+  - Consider feeding in and predicting logE instead of E, then we can exponentiate to get it back into E when we want to
+  - Compute 5x28 mean and 5x28 stdev over entire global training set
+    - Apply these train means and stdevs to global train, dev, test sets
+    - Repeat the two steps above for buoy
+  - Later: consider going back to the other domain
+  - Later: put physical constraints on other values in different domain (e.g. 0 to 2pi)
+
+==============================
+ml_waves Meeting Notes 2/20/19
+==============================
+Input should be:
+H history  len
+F forecast len
+Q # freq bins
+compute mean and standard deviation over all timesteps in train for the 5 x Q global features and the 5 x Q buoy features - apply these to all global and buoy matrices:
+    (x_ij-u_ij)/sigma_ij
+    {mean,standard_dev} matrices for {buoy,global} features (for both input and output)
+    store these four matrices so we can undo standardization later
+input feature dim: MB x (2H + F) x 5 x Q
+pass through a series of 3x3 conv layers, with the number of kernels slowly growing by powers of 2; e.g.:
+    8, 8, 16, 16, 32, 32, 64, 64
+output layer will be
+    1x1 or 3x3 conv layer, F kernels, linear/identity activation
+    output shape: MB x F x 5 x Q
+targets will be the residual:
+    true buoy for forecast period - global forecast for forecast period
+    target shape: MB x F x 5 x Q
+our predictions will be:
+    our model output + global forecast for forecast period
+loss will be MSE
+also report RMSE after undoing standardization of forecast (undo using buoy mean/stdev):
+        y_ij*sigma_ij + mu_ij
+pytorch needs to be able to load batches of inputs (MB x (2H+F) x 5 x Q) and targets (MB x F x 5 x Q)
+
+=============================
+ml_waves Meeting Notes 2/6/19
+=============================
+Updates:
+    - JM working with SC on processing the data
+To discuss:
+    - 36x64 -> 5x64 (a1,a2,b1,b2,e)
+    - Different bases for input/outputs are possible
+Next steps:
+    - Organize data as follows (save these on disk as npz)
+        foreach of train dev test
+            global tensor (Nx5x64) [only include data for valid hours]
+            buoy tensor (Nx5x64) [only include data for valid hours]
+            time vector (N) [only include times for valid hours]
+            (valid means we have data for both global and buoy)
+    - Batcher
+        - Need a function that takes an offset/overlap, history len (e.g. 24) and prediction len (e.g. 12) and lists all valid start hours (need to check to make sure no skips in the time vector)
+        - Then we will shuffle the valid start hours
+        - Need a function that takes a start hour, a global tensor and a buoy tensor and makes one datapoint
+            Datapoint: input (60x5x64) and output (12x5x64)
+        - Need a function that takes a batch of start hours and produces a MBx60x5x64 input batch and a MBx12x5x64 output batch

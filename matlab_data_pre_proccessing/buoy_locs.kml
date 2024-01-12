@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>buoy_locs.kml</name>
+	<StyleMap id="failed2000">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed170</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed1100</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="failed800">
+	</Style>
+	<Style id="default10">
+	</Style>
+	<Style id="failed1100">
+	</Style>
+	<Style id="failed160">
+	</Style>
+	<StyleMap id="failed18">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed120</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed100</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="failed140">
+	</Style>
+	<StyleMap id="default4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#default3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="failed121">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed160</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed140</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="failed500">
+	</Style>
+	<Style id="failed190">
+	</Style>
+	<Style id="failed150">
+	</Style>
+	<StyleMap id="failed40">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed500</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed150</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="hl20">
+		<IconStyle>
+			<scale>1.2</scale>
+		</IconStyle>
+	</Style>
+	<Style id="failed70">
+	</Style>
+	<Style id="failed9">
+	</Style>
+	<StyleMap id="failed2101">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed9</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed610</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="failed610">
+	</Style>
+	<Style id="failed310">
+	</Style>
+	<StyleMap id="m_ylw-pushpin8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin010</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl30</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="hl1">
+		<IconStyle>
+			<scale>1.2</scale>
+		</IconStyle>
+	</Style>
+	<Style id="failed170">
+	</Style>
+	<StyleMap id="failed110">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed190</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed800</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="default3">
+	</Style>
+	<Style id="failed100">
+	</Style>
+	<Style id="s_ylw-pushpin_hl30">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="failed0100">
+	</Style>
+	<StyleMap id="failed2100">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed310</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed220</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin010">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="failed220">
+	</Style>
+	<Style id="failed120">
+	</Style>
+	<StyleMap id="default00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#default10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hl20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="failed13">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed70</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed0100</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>WA_buoys</name>
+		<Placemark>
+			<name>La Perouse Bank</name>
+			<styleUrl>#failed13</styleUrl>
+			<Point>
+				<coordinates>-126,48.84,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>OOI Westport Shelf</name>
+			<styleUrl>#default4</styleUrl>
+			<Point>
+				<coordinates>-124.566,46.986,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Tillamook</name>
+			<styleUrl>#failed110</styleUrl>
+			<Point>
+				<coordinates>-125.771,45.925,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Astoria Canyon</name>
+			<styleUrl>#failed2101</styleUrl>
+			<Point>
+				<coordinates>-124.647,46.12900000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Columbia River Bar</name>
+			<styleUrl>#failed40</styleUrl>
+			<Point>
+				<coordinates>-124.485,46.143,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Clatsop Spit</name>
+			<styleUrl>#failed2000</styleUrl>
+			<Point>
+				<coordinates>-124.128,46.216,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Grays Harbor</name>
+			<styleUrl>#failed121</styleUrl>
+			<Point>
+				<coordinates>-124.244,46.858,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Neah Bay</name>
+			<styleUrl>#failed2100</styleUrl>
+			<Point>
+				<coordinates>-124.726,48.493,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cape Elizabeth</name>
+			<styleUrl>#failed18</styleUrl>
+			<Point>
+				<coordinates>-124.742,47.35299999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stonewall Bank</name>
+			<LookAt>
+				<longitude>-125.0534910226744</longitude>
+				<latitude>47.20657971415638</latitude>
+				<altitude>0</altitude>
+				<heading>-0.9474433175533041</heading>
+				<tilt>0</tilt>
+				<range>295548.1259630045</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#default4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-124.515,44.677,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Umpqua Offshore</name>
+			<LookAt>
+				<longitude>-126.4111790348497</longitude>
+				<latitude>46.96848235253709</latitude>
+				<altitude>0</altitude>
+				<heading>-1.936834678374257</heading>
+				<tilt>0</tilt>
+				<range>1113485.673103121</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#default4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-124.547,43.769,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Port Orford</name>
+			<LookAt>
+				<longitude>-126.4111790348497</longitude>
+				<latitude>46.96848235253709</latitude>
+				<altitude>0</altitude>
+				<heading>-1.936834678374257</heading>
+				<tilt>0</tilt>
+				<range>1113485.673103121</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#default4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-124.874,42.779,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>West Washington</name>
+			<LookAt>
+				<longitude>-130.8832060192873</longitude>
+				<latitude>46.19061053731763</latitude>
+				<altitude>0</altitude>
+				<heading>-2.583669677269699</heading>
+				<tilt>0.05906746732800611</tilt>
+				<range>37592.28933703857</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#default00</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-131.0699175008255,46.13943470684855,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>St. Georges</name>
+			<LookAt>
+				<longitude>-126.8903043511802</longitude>
+				<latitude>45.440007042818</latitude>
+				<altitude>0</altitude>
+				<heading>-2.237267660919829</heading>
+				<tilt>0</tilt>
+				<range>1113727.999674996</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#default4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-124.382,41.852,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>West Oregon</name>
+			<LookAt>
+				<longitude>-126.7390379555713</longitude>
+				<latitude>47.29073397482281</latitude>
+				<altitude>0</altitude>
+				<heading>3.151681385100198</heading>
+				<tilt>0</tilt>
+				<range>1413244.872902417</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-130.537,42.612,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>South Nomad</name>
+			<LookAt>
+				<longitude>-125.2409561751603</longitude>
+				<latitude>46.61571349815522</latitude>
+				<altitude>0</altitude>
+				<heading>4.206383563257035</heading>
+				<tilt>0</tilt>
+				<range>1888627.523086618</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-133.94,48.35,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
